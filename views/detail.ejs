@@ -1,0 +1,24 @@
+<% extend('base') %>
+<h3><a href="/users/<%= authorName %>"><%= authorName %></a></h3>
+<h4><%= post.title %></h4>
+<h6><%= post.date %></h6>
+<h4><%= post.body %></h4>
+<% if (isUpdate) { %>
+    <a href='/blog/<%= post.slug %>/update'>Chỉnh sửa</a>
+    <a href='/blog/<%= post.slug %>/delete'>Xóa bài viết</a>
+<% }; %>
+<br/>
+<h6>Bình luận bài viết</h6>
+<hr/>
+<% listComment.forEach(comment => { %>
+    <h6><a href="/users/<%= comment[0] %>"><%= comment[0] %></a></h6>
+    <h6><%= comment[1] %></h6>
+<% }) %>
+<% if (isLogin) {%>
+    <br/>
+    <textarea name="body" form="usrform"></textarea>    
+    <form id="usrform" action="/blog/<%= post.slug %>/comment" method="post">
+        <br/>
+        <input type="submit" value="Bình Luận">
+    </form>
+<% }; %>

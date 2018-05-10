@@ -1,0 +1,10 @@
+<% extend('base') %>
+<% if (error) { %>
+    <h6><%= error %></h6>
+<%}; %>
+<form id="usrform" action="./create" method="post">
+    <label for="team_name">Write a Post: </label><br/>
+    <input type="text" name="title"/>
+    <input type="submit" value="Submit">
+</form>
+<textarea name="body" form="usrform"></textarea>

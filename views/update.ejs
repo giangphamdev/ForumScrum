@@ -1,0 +1,7 @@
+<% extend('base') %>
+
+<form id="usrform" action="./update" method="post">
+    <label for="team_name">Update a Post: </label><br/>
+    <input type="submit" value="Update">
+</form>
+<textarea name="body" form="usrform"><%= post.body %></textarea>

@@ -1,0 +1,13 @@
+<% extend('base') %>
+
+<% if (isLogin) { %>
+    <h4><a href="/blog/create">Tạo bài viết</a></h4>
+<%};%>
+<% if (posts[0]) { %>
+<% posts.forEach(function(post){ %>
+    <h3 ><a href="blog/<%= post.slug %>"><%= post.title %></a></h3><h5>(<%= post.rating %> rating)</h5>
+    <h6><%= post.date %></h6>
+<% }); %>
+<% } else { %>
+    <h5>Không có bài viết nào</h5>
+<% }%>

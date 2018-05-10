@@ -1,0 +1,6 @@
+<% extend('base') %>
+
+<form id="usrform" action="/blog/<%= post.slug %>/delete" method="post">
+    <label for="team_name">Bạn có muốn xóa <%= post.title %>: </label><br/>
+    <input type="submit" value="Yes">
+</form>

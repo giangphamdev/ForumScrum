@@ -1,0 +1,9 @@
+<% extend('base') %>
+
+<% if (username === profileName) { %>
+    <h3>Thông tin cá nhân</h3>
+<% } else { %>
+    <h3>Thông tin thành viên</h3>
+<% } %>
+<p>Name: <%= profileName %></p>
+<p>Email: <%= email %></p>

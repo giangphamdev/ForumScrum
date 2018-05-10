@@ -1,0 +1,14 @@
+<% extend('base') %>
+<% if (error) { %>
+    <h6><%= error %></h6>
+<%}; %>
+<form action="./signup" method="post">
+    <label>Email: </label><input type="text" name="email"/>
+    <br/>
+    <label>User Name: </label><input type="text" name="username"/>
+    <br/>
+    <label>Password: </label><input type="password" name="password1"/>
+    <br/>
+    <label>Password again: </label><input type="password" name="password2"/>
+    <input type="submit" value="Submit">
+</form>
